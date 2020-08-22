@@ -1,0 +1,21 @@
+{% extends 'accounts/main.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="col-md-3"></div>
+    <div class="content-section col-md-6">
+        <form method="post">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">
+                    You have been logged out
+                </legend>
+            </fieldset>
+            <div class="form-group">
+                <a href="{% url 'login' %}">
+                    Login Again
+                </a>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3"></div>
+{% endblock content %}

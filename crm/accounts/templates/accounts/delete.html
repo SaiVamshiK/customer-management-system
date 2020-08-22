@@ -1,0 +1,46 @@
+
+
+
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% block content %}
+    <div class="col-md-3">
+
+    </div>
+    <div class="content-section col-md-6">
+        <form method="post">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">
+                    Are you sure?
+                </legend>
+            </fieldset>
+            <div class="card card-body">
+                <table class="table table-sm">
+                    <tr>
+                        <th>Product</th>
+                        <th>Date Ordered</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                            <td>{{order.product.name}}</td>
+                            <td>{{order.date_created}}</td>
+                            <td>{{order.status}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card card-body">
+                <button class="btn btn-sm btn-outline-danger" type="submit">
+                    Yes Delete!
+                </button>
+                <hr>
+                <a href="/" class="btn btn-sm btn-outline-secondary">
+                    Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3">
+
+    </div>
+{% endblock content %}
